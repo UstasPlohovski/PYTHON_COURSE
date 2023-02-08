@@ -7,6 +7,8 @@
 # 2. Вывод из суммы и произведения для озвучивания Кате
 # 3. Решение от обратного через систему уравнений методом подстановки
 
+import math
+
 x = int(input('Enter any first number from 0 till 1000: '))
 y = int(input('Enter any second number from 0 till 1000: '))
 s = x + y
@@ -16,7 +18,7 @@ p = x * y
 print(f'Dear Kate, Sum of two numbers = {s} and product of two numbers = {p} ')
 print('What numbers did i guess?')
 
-y_kate = p / (s-2)
-x_kate = s - y_kate
+y_kate = int ((s + math.sqrt(math.pow(s, 2) - (p * 4))) / 2)
+x_kate = int ((s - math.sqrt(math.pow(s, 2) - (p * 4))) / 2)
 
 print(f'Kate says: You gessed numbers {x_kate} and {y_kate}, my dear brother!')
